@@ -32,9 +32,9 @@ jobs:
         run: ./gradlew testDebugUnitTest assembleDebug --parallel --build-cache --no-daemon
 
       - name: Upload Debug APK artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: cbt-sman4-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          archive: false
           if-no-files-found: error
           retention-days: 1
